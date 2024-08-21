@@ -95,6 +95,16 @@ export function clearCart(): Record<string, number> {
   return cart;
 }
 
+export function applyShippingDiscount(total: number): number {
+  const discount = 10;
+  if (total >= 500) {
+    return total - discount;
+  }
+  else {
+    return total;
+  }
+}
+
 /**
  * Applies a shipping discount to the total cost if total cost exceeds a certain threshold.
  *
